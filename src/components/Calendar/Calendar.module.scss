@@ -1,0 +1,21 @@
+.section {
+  display: flex;
+  justify-content: space-between;
+  min-width: 860px;
+  width: 100vw;
+  max-width: 1200px;
+  min-height: 600px;
+  height: 40vh;
+  margin: auto;
+  border: 15px solid #009991;
+}
+
+@media screen and (max-width: 860px) {
+  .section {
+    flex-direction: column;
+    min-width: 400px;
+    width: 100%;
+    min-height: 600px;
+    height: 100%;
+  }
+}
