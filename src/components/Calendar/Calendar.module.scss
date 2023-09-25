@@ -1,0 +1,18 @@
+@use "/src/common/styles/colors" as *;
+
+.section {
+  display: flex;
+  min-width: 860px;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 600px;
+  height: 40vh;
+  margin: auto;
+  border: 15px solid $colorBorder;
+
+  @media screen and (max-width: 860px) {
+    flex-direction: column;
+    min-width: 400px;
+    height: 100%;
+  }
+}

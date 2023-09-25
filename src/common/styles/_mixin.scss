@@ -1,0 +1,5 @@
+@mixin flexCenter {
+  display: flex; /* Встановлення відображення блоку як flex */
+  justify-content: center; /* Вирівнювання по горизонталі - по центру */
+  align-items: center; /* Вирівнювання по вертикалі - по центру */
+}
