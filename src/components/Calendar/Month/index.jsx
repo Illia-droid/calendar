@@ -12,6 +12,10 @@ const Month = () => {
       <Week
         key={index}
         currentDay={currentDate}
+        /* моя логіка полягає в тому, що я передаю перший день(в моєму випадку це понеділок) 
+        першого тижня(понеділок може належати і до останнього тижня минулого місяця) 
+        
+        і за кожен цикл додається тиждень, тому я передаю в пропсах 'грубо кажучі' кожен понеділок*/
         mondayOfFirstWeekOfMonth={addWeeks(
           startOfWeek(startOfMonth(currentDate), { weekStartsOn: 1 }),
           index
