@@ -16,7 +16,7 @@ const Month = () => {
         першого тижня(понеділок може належати і до останнього тижня минулого місяця) 
         
         і за кожен цикл додається тиждень, тому я передаю в пропсах 'грубо кажучі' кожен понеділок*/
-        mondayOfFirstWeekOfMonth={addWeeks(
+        firstDayOfWeek={addWeeks(
           startOfWeek(startOfMonth(currentDate), { weekStartsOn: 1 }),
           index
         )}
