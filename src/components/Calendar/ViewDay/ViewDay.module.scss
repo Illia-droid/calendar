@@ -1,7 +1,11 @@
+@use "/src/common/styles/colors" as *;
+@use "/src/common/styles/mixin" as *;
+
 .articleViewDay {
   width: 50%;
-  background-color: #38cec3;
+  background-color: $colorViewDay;
   position: relative;
+
   > * {
     margin: 50px 0;
     color: #fff;
@@ -10,22 +14,23 @@
     font-weight: 100;
     font-stretch: condensed;
   }
+
   > h3 {
     font-size: 50px;
   }
 }
+
 .articleViewDay__h2 {
   font-size: 296px;
 }
 
 @media screen and (max-width: 860px) {
   .articleViewDay {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexCenter;
     width: 100%;
     height: 20vh;
   }
+
   .articleViewDay__h2 {
     margin-left: 10px;
     font-size: 50px;

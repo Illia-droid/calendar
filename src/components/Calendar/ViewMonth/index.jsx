@@ -8,7 +8,7 @@ import { DateContext } from "../../../contexts";
 const ViewMonth = () => {
   const namesDays = ["m", "t", "w", "t", "f", "s", "s"];
   const renderDaysNames = (name, i) => (
-    <th key={i} className={styles.litters}>
+    <th key={i} className={styles.letters}>
       {name}
     </th>
   );

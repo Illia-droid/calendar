@@ -1,3 +1,4 @@
+@use "/src/common/styles/colors" as *;
 .day {
   padding: 8px;
   color: #b3b3b3;
@@ -6,9 +7,9 @@
 .currentDay {
   box-sizing: initial;
   padding: 4px;
-  border: 4px solid #e61f58;
+  border: 4px solid $colorLetters;
   border-radius: 50%;
-  color: #e61f58;
+  color: $colorLetters;
 }
 
 @media screen and (max-width: 860px) {
