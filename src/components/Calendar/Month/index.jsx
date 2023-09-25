@@ -1,22 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import Week from "../Week";
-import {
-  addMonths,
-  addWeeks,
-  getWeeksInMonth,
-  startOfMonth,
-  startOfWeek,
-} from "date-fns";
+import { addWeeks, getWeeksInMonth, startOfMonth, startOfWeek } from "date-fns";
 
-const Month = ({ currentDate }) => {
+import { DateContext } from "../../../contexts";
+
+const Month = () => {
   const weeksArray = [];
-
+  const { currentDate } = useContext(DateContext);
   for (let index = 0; index <= getWeeksInMonth(currentDate); index++) {
-    console.log("addMonths ", addMonths(currentDate, 1));
     weeksArray.push(
       <Week
-        today={currentDate}
-        currentDate={addWeeks(
+        key={index}
+        currentDay={currentDate}
+        mondayOfFirstWeekOfMonth={addWeeks(
           startOfWeek(startOfMonth(currentDate), { weekStartsOn: 1 }),
           index
         )}

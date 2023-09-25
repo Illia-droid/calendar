@@ -1,31 +1,21 @@
-import React, { useState } from "react";
-import { addMonths } from "date-fns";
+import React from "react";
+
 import ViewDay from "./ViewDay";
 import ViewMonth from "./ViewMonth";
 
 import styles from "./Calendar.module.scss";
+import { DateContext } from "../../contexts";
+import { useCalendar } from "../../hooks";
 
 const Calendar = () => {
-  const [currentDate, setCurrentDate] = useState(new Date());
-  const today = new Date();
-
-  const addMonth = () => {
-    setCurrentDate((prevMonth) => addMonths(prevMonth, 1));
-  };
-
-  const divMonth = () => {
-    setCurrentDate((prevMonth) => addMonths(prevMonth, -1));
-  };
-
+  const { currentDate, addMonth, divMonth } = useCalendar();
   return (
-    <section className={styles.section}>
-      <ViewDay currentDate={today} />
-      <ViewMonth
-        currentDate={currentDate}
-        divMonth={divMonth}
-        addMonth={addMonth}
-      />
-    </section>
+    <DateContext.Provider value={{ currentDate, addMonth, divMonth }}>
+      <section className={styles.section}>
+        <ViewDay />
+        <ViewMonth />
+      </section>
+    </DateContext.Provider>
   );
 };
 

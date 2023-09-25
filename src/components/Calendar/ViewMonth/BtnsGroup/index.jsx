@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./BtnsGroup.module.scss";
-const BtnsGroup = ({ divMonth, addMonth }) => {
+import { DateContext } from "../../../../contexts";
+const BtnsGroup = () => {
+  const {divMonth, addMonth} = useContext(DateContext);
   return (
     <div className={styles.btnsGroup}>
       <button onClick={divMonth}>prev</button>
